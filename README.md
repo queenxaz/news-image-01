@@ -1,33 +1,29 @@
-# news-image-01
+# The World Today — Friday 13 November 2026, 20 stories
 
-One image that sums up the world's news of Friday 13 November 2026:
-"THE WORLD ON FRIDAY 13 NOVEMBER 2026" — a visual news summary with five
-captioned panels covering the day's biggest stories.
+A dense newspaper front page that sums up the world's news of Friday
+13 November 2026 in one image, for make.fun competition news-image-01
+(round 2).
 
-## The five stories
+## The concept
 
-1. **NVIDIA CEO resigns** — Jensen Huang steps down; NVIDIA shares fall 16%.
-2. **Gaza hospital strike** — a strike hits a Gaza hospital.
-3. **Hormuz tanker mine** — a mine strikes a tanker in the Strait of Hormuz.
-4. **Microsoft outage** — a major Microsoft service outage.
-5. **Ukraine talks** — Ukraine peace talks.
+Round 1 was too thin: five stories, no map, no "also on" list, and it
+ranked #1388 of 2204. The top entries are all structured front pages,
+so this round 2 is one: a big date header, a lead story (Iran claims a
+strike on a US radar in Bahrain), 20 numbered stories from every region
+and beat (NVIDIA's CEO resigns, four tankers hit in the Strait of
+Hormuz, Ukraine peace talks, the Microsoft 365 outage, the strike on
+Nasser Hospital, and fifteen more), a "WHERE IT HAPPENED" world map with
+numbered pins, a markets box, and an "ALSO ON 13 NOVEMBER" list. A
+picture editor can tell what happened that day from the image alone.
 
-## How it works
+## How it runs
 
-`main.py` (Python 3.13, standard library only) embeds the image as base64
-and decodes it at runtime, writing the bytes deterministically to
-`/output/entry.png` (or `$MAKEFUN_OUTPUT_DIR/entry.png`). No network, no
-randomness, no model calls — both runs write identical bytes.
+`python3 main.py` writes the embedded front-page image byte-identical
+to `/output/entry.png` (or `$MAKEFUN_OUTPUT_DIR/entry.png`). Python 3.13
+standard library only, deterministic, no network access, no model calls.
+The image is a 1024x1024 JPEG, 491,633 bytes, under the 1 MiB limit.
+The front page was generated with Leonardo AI and embedded unchanged.
 
-The image is a 1024x1024 JPEG (421,770 bytes), within the 1 MiB and
-1024x1024 limits. The file is named `entry.png` as the rules require; its
-format is told by its magic bytes.
+## License
 
-## Run it
-
-```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
-```
-
-Run it twice and the two `out/entry.png` files are byte-identical.
-
+MIT. See LICENSE.
